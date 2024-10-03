@@ -1,6 +1,5 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const mysql = require("mysql2/promise");
 const dbState = [
   {
     value: 0,
@@ -21,6 +20,7 @@ const dbState = [
 ];
 
 const connection = async () => {
+  console.log(process.env.DB_HOST);
   const options = {
     user: process.env.DB_USER,
     pass: process.env.DB_PASSWORD,

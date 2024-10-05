@@ -26,4 +26,36 @@ module.exports = {
       return null;
     }
   },
+  getCustomerService: async (req, res) => {
+    try {
+      let results = await Customers.find({});
+      return results;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  },
+  updateCustomerService: async (dataUpdateCustomer) => {
+    try {
+      const { id, name, address, phone, email, description } =
+        dataUpdateCustomer;
+
+      let result = await Customers.findOneAndUpdate(id, dataUpdateCustomer, {
+        new: true,
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  },
+  deleteCustomerService: async (id) => {
+    try {
+      let result = await Customers.deleteById(id);
+      return result;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  },
 };

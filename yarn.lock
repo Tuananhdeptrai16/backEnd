@@ -1521,7 +1521,12 @@ mongodb@4.11.0:
     "@aws-sdk/credential-providers" "^3.186.0"
     saslprep "^1.0.3"
 
-mongoose@6.7.2:
+mongoose-delete@0.5.4:
+  version "0.5.4"
+  resolved "https://registry.npmjs.org/mongoose-delete/-/mongoose-delete-0.5.4.tgz"
+  integrity sha512-zKkcWFEwTneVG4Oiy+qJRJPFCiGlqOJToHeU3a3meJybWsHCnWxdHkGEkFWNY5cmYEv5av3WwByOhPlQ6I+FmQ==
+
+"mongoose@4.x || 5.x || 6.x", mongoose@6.7.2:
   version "6.7.2"
   resolved "https://registry.npmjs.org/mongoose/-/mongoose-6.7.2.tgz"
   integrity sha512-lrP2V5U1qhaf+z33fiIn7aYAZZ1fVDly+TkFRjTujNBF/FIHESATj2RbgAOSlWqv32fsZXkXejXzeVfjbv35Ow==

@@ -58,4 +58,12 @@ module.exports = {
       return null;
     }
   },
+  deleteArrayCustomerService: async (dataIds) => {
+    try {
+      let results = await Customers.deleteMany({ _id: { $in: dataIds } });
+    } catch (error) {
+      return null;
+      console.log(error);
+    }
+  },
 };

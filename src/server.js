@@ -23,24 +23,40 @@ app.use(express.urlencoded({ extended: true }));
 (async () => {
   try {
     //Using moogoose
-    // await connection();
+    await connection();
 
     //Using Driver
     //Using moogoDB
-    const url = process.env.DB_HOST_WITH_DRIVER;
-    const client = new MongoClient(url);
+    // const url = process.env.DB_HOST_WITH_DRIVER;
+    // const client = new MongoClient(url);
 
-    //database name
-    const dbName = process.env.DB_NAME;
+    // //database name
+    // const dbName = process.env.DB_NAME;
 
-    await client.connect();
-    console.log("Connected successfully to server");
-    const db = client.db(dbName);
-    const collection = db.collection("customers");
-
-    // collection.insertOne({ name: "Tuananh dep trai" });
-    let a = await collection.findOne({ name: "Tuananh dep trai" });
-    console.log("find", a);
+    // await client.connect();
+    // console.log("Connected successfully to server");
+    // const db = client.db(dbName);
+    // const collection = db.collection("customers");
+    // address =[{
+    //   id : 1
+    //   provide: "hn",
+    //   country: {
+    //     name: "vietnam",
+    //     code: 10000,
+    // },
+    // {
+    //   id :2
+    //   provide: "hn",
+    //   country: {
+    //     name: "vietnam",
+    //     code: 10000,
+    // }]
+    // collection.insertOne({
+    //   name: "Tuananh dep trai",
+    //   address: [1, 2, 3],
+    // });
+    // let a = await collection.findOne({ name: "Tuananh dep trai" });
+    // console.log("find", a);
 
     app.listen(port, hostname, () => {
       console.log(`BackEnd zero app listening on port ${port}`);

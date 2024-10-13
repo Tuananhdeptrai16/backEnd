@@ -1,4 +1,5 @@
 const { uploadFileSingle } = require("../services/fileService");
+const { customerSchema } = require("../validation/validationSchema");
 const {
   createCustomerService,
   createCustomerManyService,
@@ -10,6 +11,9 @@ const {
 module.exports = {
   postCreateCustomer: async (req, res) => {
     let { name, address, phone, email, description } = req.body;
+
+    let result = customerSchema.validate(req.body, { abortEarly: false });
+    console.log("Check result", result);
     let imageUrl = "";
     if (!req.files || Object.keys(req.files).length === 0) {
       return res.status(400).send("No files were uploaded.");

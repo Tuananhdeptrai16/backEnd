@@ -1,10 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
+//shape data
 const userSchema = new mongoose.Schema({
-  email: String,
-  name: String,
-  city: String,
+    name: String,
+    email: String,
+    city: String,
 });
-const Users = mongoose.model("Users", userSchema);
 
-module.exports = Users;
+const User = mongoose.model('user', userSchema);
+
+module.exports = User;
